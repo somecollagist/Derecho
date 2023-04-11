@@ -1,0 +1,8 @@
+.vscode
+
+gnu-efi
+OVMF
+
+bin
+bootbin
+*.img
