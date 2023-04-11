@@ -1,4 +1,4 @@
-CFLG := -I$(GNUEFI)/inc -I$(GNUEFI)/lib -I$(ROOT)\
+CFLG := -I$(GNUEFI)/inc -I$(GNUEFI)/lib -I$(ROOT) -I$(SRC) \
 		-lgnuefi -lefi \
 		-fpic -ffreestanding -fno-stack-protector -fno-stack-check -fshort-wchar \
 		-mno-red-zone -maccumulate-outgoing-args \

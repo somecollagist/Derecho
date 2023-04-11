@@ -4,6 +4,10 @@ ENTRY(_start)
 SECTIONS
 {
 	_KernelStart = .;
+	KernelEntrySection : ALIGN(0x1000)
+	{
+		*(KernelEntrySection)
+	}
 	.text : ALIGN(0x1000)
 	{
 		*(.text)

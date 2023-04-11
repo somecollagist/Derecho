@@ -1,4 +1,4 @@
-#include "kernelfind.h"
+#include "UEFIkernelfind.h"
 
 #include <types.h>
 #include <efi.h>
@@ -147,11 +147,14 @@ EFI_STATUS EFIAPI LocateKernelStart(EFI_HANDLE ImageHandle)
 	}
 	Print(L"- Kernel Loaded.\r\n");
 
-	int(*KernelStart)() = (												// Kernel entry point
-		(__attribute__((sysv_abi)) int(*)())
+	int(*KernelStart)(BootInfo*) = (									// Kernel entry point
+		(
+			__attribute__((sysv_abi)) 
+			int(*)(BootInfo*)
+		)
 		Header->e_entry
 	);
-	Print(L"- Kernel entry point found.\r\n");
+	Print(L"- Kernel entry point found at 0x%x.\r\n", Header->e_entry);
 
 	return EFI_SUCCESS;
 }

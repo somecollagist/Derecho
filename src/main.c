@@ -1,4 +1,12 @@
-int _start()
+#include <bootinfo.h>
+#include <screen.h>
+#include <types.h>
+
+__attribute__((section("KernelEntrySection")))
+int _start(BootInfo* bootinfo)
 {
-	return 123987;
+	UnpackBootInfo(bootinfo);
+
+	for(;;){}
+	return 0;
 }
