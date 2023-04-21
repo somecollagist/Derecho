@@ -84,7 +84,6 @@ void CycleToNextCharPosition()
 
 void PlotCharacter(char c, uint16_t x, uint16_t y, Colour colour)
 {
-	PlotPixel(60+(x*5), 70, COLOUR_WHITE);
 	uint8_t XMask;																			// Bitmap to be used for each row of the character bitmap
 	for(int Fy = 0; Fy < FontHeight; Fy++)													// Loop for every row of the character bitmap
 	{

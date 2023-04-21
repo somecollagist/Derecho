@@ -6,7 +6,7 @@ cd ..
 
 # install packages
 sudo pacman -Syy
-sudo pacman -S nasm gcc binutils qemu-desktop ovmf git make
+sudo pacman -S nasm gcc binutils qemu-desktop ovmf git make mtools
 
 # install gnu-uefi headers
 rm -rf gnu-efi

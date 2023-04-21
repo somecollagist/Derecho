@@ -37,7 +37,7 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable
 		BI.UEFIMemoryMap->MapKey
 	);
 
-	uefi_call_wrapper(									// Clear the screen again so we don't need to in the kernel
+  uefi_call_wrapper(									// Clear the screen again so we don't need to in the kernel
 		ST->ConOut->ClearScreen, 1,
 		ST->ConOut
 	);
