@@ -44,6 +44,6 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable
 
 	KernelStart(&BI);									// Jump to the kernel
 
-	for(;;)												// Should never reach this anyway
+	for(;;);											// Should never reach this anyway
 	return EFI_SUCCESS;
 }

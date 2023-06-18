@@ -23,7 +23,8 @@ void InitialiseMemoryMap()
 		Status = uefi_call_wrapper(
 			ST->BootServices->AllocatePool, 3,
 			EfiLoaderData,
-			UEFIMemoryMap.MapSize
+			UEFIMemoryMap.MapSize,
+			(void**)&UEFIMemoryMap.Map
 		);
 		Status = uefi_call_wrapper(
 			ST->BootServices->GetMemoryMap, 5,

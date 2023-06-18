@@ -11,6 +11,8 @@ __attribute__((section("KernelEntrySection")))
 int _start(BootInfo* bootinfo)
 {
 	UnpackBootInfo(bootinfo);
+
+	InitScreen();
 	
 	printf(COLOUR_STDOUT, " --- %s v%s %s\n", OS, VERSION, VERSIONNAME);
 

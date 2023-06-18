@@ -48,6 +48,7 @@ typedef struct
 #define COLOUR_FATAL	COLOUR_CRIMSON
 #define COLOUR_PROCESS	COLOUR_AZURE
 
+void InitScreen();
 void PlotPixel(uint16_t x, uint16_t y, Colour colour);
 void PlotCharacter(char c, uint16_t x, uint16_t y, Colour colour);
 void PlotString(char* s, Colour colour);

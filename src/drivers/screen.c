@@ -6,6 +6,9 @@
 
 UEFIGraphics_t UEFIGraphics;
 
+uint16_t CharX = 0;
+uint16_t CharY = 0;																			// Keeps track of last written character location
+
 typedef struct
 {
 	uint8_t c1;
@@ -13,6 +16,12 @@ typedef struct
 	uint8_t c3;
 	uint8_t Reserved;
 } __attribute__((packed)) FourByteColourStruct;												// Two modes look like this, but have swapped red and blue channels
+
+void InitScreen()																			// This shouldn't be necessary but is?? DON'T REMOVE!
+{
+	CharX = 0;
+	CharY = 0;
+}
 
 void PlotPixel(uint16_t x, uint16_t y, Colour colour)
 {
@@ -67,8 +76,6 @@ BitMask:																					// Uncertain if this works, docs weren't too clear
 	) = ColourBuilder;
 	return;
 }
-
-uint16_t CharX = 0, CharY = 0;																// Keeps track of last written character location
 
 void CycleToNextCharPosition()
 {

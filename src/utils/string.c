@@ -12,7 +12,7 @@ char reverse[64];
 
 char* itoa(uint64_t num, int base)
 {
-  int pos, opos, top = 0;
+	int pos, opos, top = 0;
 
 	if(num == 0){
 		buffer[0] = '0';
@@ -35,7 +35,7 @@ char* itoa(uint64_t num, int base)
 
 void printf(Colour colour, char* str, ...)
 {
-  va_list vl;
+	va_list vl;
 	int i = 0, j = 0, k = 0;
 	char buffer[256] = {0};
 	char temporarybuffer[256] = {0};

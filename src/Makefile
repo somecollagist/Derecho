@@ -16,7 +16,7 @@ INC := $(addprefix -I ,$(shell dirname $(shell find $(SRC) -name "*.h") | tr ' '
 
 all: $(ATAR) $(CTAR)
 	$(LD) $(LDFLG) $^ -o $(BIN)/kernel.elf
-	objdump -D -z $(BIN)/kernel.elf >> $(BIN)/kernel.txt
+	objdump -D -M x86-64,intel -z $(BIN)/kernel.elf >> $(BIN)/kernel.txt
 
 $(BIN)/%.o: $(SRC)/%.c
 	mkdir -p $(shell dirname $@)
