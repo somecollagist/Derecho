@@ -20,14 +20,14 @@ void PlotPixel(uint16_t x, uint16_t y, Colour colour)
 	switch(UEFIGraphics.PixelFormat)														// Figure out which mode we're in
 	{
 		case PixelRedGreenBlueReserved8BitPerColor:
-			fbcs.c1 = colour.Red;
+			fbcs.c3 = colour.Red;
 			fbcs.c2 = colour.Green;
-			fbcs.c3 = colour.Blue;
+			fbcs.c1 = colour.Blue;
 			goto FourBytesPerPixel;
 		case PixelBlueGreenRedReserved8BitPerColor:
-			fbcs.c1 = colour.Blue;
+			fbcs.c3 = colour.Blue;
 			fbcs.c2 = colour.Green;
-			fbcs.c3 = colour.Red;
+			fbcs.c1 = colour.Red;
 			goto FourBytesPerPixel;
 		case PixelBitMask:
 			goto BitMask;
