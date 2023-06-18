@@ -85,7 +85,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion ExclamationMark
 	#pragma region SpeechMark
 	GLYPH(
 		0b00000000,
@@ -105,7 +105,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion SpeechMark
 	#pragma region Hash
 	GLYPH(
 		0b00000000,
@@ -125,7 +125,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Hash
 	#pragma region DollarSign
 	GLYPH(
 		0b00000000,
@@ -145,7 +145,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00001000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion DollarSign
 	#pragma region PercentSign
 	GLYPH(
 		0b00000000,
@@ -165,7 +165,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion PercentSign
 	#pragma region Ampersand
 	GLYPH(
 		0b00000000,
@@ -185,7 +185,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Ampersand
 	#pragma region Apostrophe
 	GLYPH(
 		0b00000000,
@@ -205,7 +205,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Apostrophe
 	#pragma region OpenBracket
 	GLYPH(
 		0b00000000,
@@ -225,8 +225,8 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
-	#pragma region OpenBracket
+	#pragma endregion OpenBracket
+	#pragma region CloseBracket
 	GLYPH(
 		0b00000000,
 		0b00000000,
@@ -245,7 +245,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion CloseBracket
 	#pragma region Asterix
 	GLYPH(
 		0b00000000,
@@ -265,7 +265,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Asterix
 	#pragma region PlusSign
 	GLYPH(
 		0b00000000,
@@ -285,7 +285,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion PlusSign
 	#pragma region Comma
 	GLYPH(
 		0b00000000,
@@ -305,7 +305,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00010000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Comma
 	#pragma region MinusSign
 	GLYPH(
 		0b00000000,
@@ -325,7 +325,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion MinusSign
 	#pragma region FullStop
 	GLYPH(
 		0b00000000,
@@ -345,7 +345,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion FullStop
 	#pragma region ForwardSlash
 	GLYPH(
 		0b00000000,
@@ -365,7 +365,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion ForwardSlash
 	#pragma region _0
 	GLYPH(
 		0b00000000,
@@ -385,7 +385,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _0
 	#pragma region _1
 	GLYPH(
 		0b00000000,
@@ -405,7 +405,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _1
 	#pragma region _2
 	GLYPH(
 		0b00000000,
@@ -425,7 +425,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _2
 	#pragma region _3
 	GLYPH(
 		0b00000000,
@@ -445,7 +445,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _3
 	#pragma region _4
 	GLYPH(
 		0b00000000,
@@ -465,7 +465,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _4
 	#pragma region _5
 	GLYPH(
 		0b00000000,
@@ -485,7 +485,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _5
 	#pragma region _6
 	GLYPH(
 		0b00000000,
@@ -505,7 +505,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _6
 	#pragma region _7
 	GLYPH(
 		0b00000000,
@@ -525,7 +525,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _7
 	#pragma region _8
 	GLYPH(
 		0b00000000,
@@ -545,7 +545,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _8
 	#pragma region _9
 	GLYPH(
 		0b00000000,
@@ -565,7 +565,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion _9
 	#pragma region Colon
 	GLYPH(
 		0b00000000,
@@ -585,7 +585,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Colon
 	#pragma region SemiColon
 	GLYPH(
 		0b00000000,
@@ -605,7 +605,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00010000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion SemiColon
 	#pragma region LessThan
 	GLYPH(
 		0b00000000,
@@ -625,7 +625,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion LessThan
 	#pragma region Equals
 	GLYPH(
 		0b00000000,
@@ -645,7 +645,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Equals
 	#pragma region GreaterThan
 	GLYPH(
 		0b00000000,
@@ -665,7 +665,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion GreaterThan
 	#pragma region QuestionMark
 	GLYPH(
 		0b00000000,
@@ -685,7 +685,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion QuestionMark
 	#pragma region AtSymbol
 	GLYPH(
 		0b00000000,
@@ -705,7 +705,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion AtSymbol
 	#pragma region A
 	GLYPH(
 		0b00000000,
@@ -725,7 +725,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion A
 	#pragma region B
 	GLYPH(
 		0b00000000,
@@ -745,7 +745,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion B
 	#pragma region C
 	GLYPH(
 		0b00000000,
@@ -765,7 +765,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion C
 	#pragma region D
 	GLYPH(
 		0b00000000,
@@ -785,7 +785,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion D
 	#pragma region E
 	GLYPH(
 		0b00000000,
@@ -805,7 +805,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion E
 	#pragma region F
 	GLYPH(
 		0b00000000,
@@ -825,7 +825,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion F
 	#pragma region G
 	GLYPH(
 		0b00000000,
@@ -845,7 +845,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion G
 	#pragma region H
 	GLYPH(
 		0b00000000,
@@ -865,7 +865,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion H
 	#pragma region I
 	GLYPH(
 		0b00000000,
@@ -885,7 +885,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion I
 	#pragma region J
 	GLYPH(
 		0b00000000,
@@ -905,7 +905,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion J
 	#pragma region K
 	GLYPH(
 		0b00000000,
@@ -925,7 +925,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion K
 	#pragma region L
 	GLYPH(
 		0b00000000,
@@ -945,7 +945,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion L
 	#pragma region M
 	GLYPH(
 		0b00000000,
@@ -965,7 +965,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion M
 	#pragma region N
 	GLYPH(
 		0b00000000,
@@ -985,7 +985,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion N
 	#pragma region O
 	GLYPH(
 		0b00000000,
@@ -1005,7 +1005,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion O
 	#pragma region P
 	GLYPH(
 		0b00000000,
@@ -1025,7 +1025,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion P
 	#pragma region Q
 	GLYPH(
 		0b00000000,
@@ -1045,7 +1045,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Q
 	#pragma region R
 	GLYPH(
 		0b00000000,
@@ -1065,7 +1065,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion R
 	#pragma region S
 	GLYPH(
 		0b00000000,
@@ -1085,7 +1085,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion S
 	#pragma region T
 	GLYPH(
 		0b00000000,
@@ -1105,7 +1105,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion T
 	#pragma region U
 	GLYPH(
 		0b00000000,
@@ -1125,7 +1125,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion U
 	#pragma region V
 	GLYPH(
 		0b00000000,
@@ -1145,7 +1145,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion V
 	#pragma region W
 	GLYPH(
 		0b00000000,
@@ -1165,7 +1165,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion W
 	#pragma region X
 	GLYPH(
 		0b00000000,
@@ -1185,7 +1185,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion X
 	#pragma region Y
 	GLYPH(
 		0b00000000,
@@ -1205,7 +1205,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Y
 	#pragma region Z
 	GLYPH(
 		0b00000000,
@@ -1225,7 +1225,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Z
 	#pragma region OpenSquareBracket
 	GLYPH(
 		0b00000000,
@@ -1245,7 +1245,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion OpenSquareBracket
 	#pragma region BackSlash
 	GLYPH(
 		0b00000000,
@@ -1265,7 +1265,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Backslash
 	#pragma region CloseSquareBracket
 	GLYPH(
 		0b00000000,
@@ -1285,7 +1285,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion CloseSquareBracket
 	#pragma region Caret
 	GLYPH(
 		0b00000000,
@@ -1305,7 +1305,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Caret
 	#pragma region Underscore
 	GLYPH(
 		0b00000000,
@@ -1325,7 +1325,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Underscore
 	#pragma region Backtick
 	GLYPH(
 		0b00000000,
@@ -1345,7 +1345,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Backtick
 	#pragma region a
 	GLYPH(
 		0b00000000,
@@ -1365,7 +1365,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion a
 	#pragma region b
 	GLYPH(
 		0b00000000,
@@ -1385,7 +1385,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion b
 	#pragma region c
 	GLYPH(
 		0b00000000,
@@ -1405,7 +1405,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion c
 	#pragma region d
 	GLYPH(
 		0b00000000,
@@ -1425,7 +1425,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion d
 	#pragma region e
 	GLYPH(
 		0b00000000,
@@ -1445,7 +1445,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion e
 	#pragma region f
 	GLYPH(
 		0b00000000,
@@ -1465,7 +1465,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion f
 	#pragma region g
 	GLYPH(
 		0b00000000,
@@ -1485,7 +1485,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b01000010,
 		0b00111100
 	),
-	#pragma endregion
+	#pragma endregion g
 	#pragma region h
 	GLYPH(
 		0b00000000,
@@ -1505,7 +1505,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion h
 	#pragma region i
 	GLYPH(
 		0b00000000,
@@ -1525,7 +1525,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion i
 	#pragma region j
 	GLYPH(
 		0b00000000,
@@ -1545,7 +1545,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b01000100,
 		0b00111000
 	),
-	#pragma endregion
+	#pragma endregion j
 	#pragma region k
 	GLYPH(
 		0b00000000,
@@ -1565,7 +1565,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion k
 	#pragma region l
 	GLYPH(
 		0b00000000,
@@ -1585,7 +1585,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion l
 	#pragma region m
 	GLYPH(
 		0b00000000,
@@ -1605,7 +1605,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion m
 	#pragma region n
 	GLYPH(
 		0b00000000,
@@ -1625,7 +1625,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion n 
 	#pragma region o
 	GLYPH(
 		0b00000000,
@@ -1645,7 +1645,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion o
 	#pragma region p
 	GLYPH(
 		0b00000000,
@@ -1665,7 +1665,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b01000000,
 		0b01000000
 	),
-	#pragma endregion
+	#pragma endregion p
 	#pragma region q
 	GLYPH(
 		0b00000000,
@@ -1685,7 +1685,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000010,
 		0b00000010
 	),
-	#pragma endregion
+	#pragma endregion q
 	#pragma region r
 	GLYPH(
 		0b00000000,
@@ -1705,7 +1705,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion r
 	#pragma region s
 	GLYPH(
 		0b00000000,
@@ -1725,7 +1725,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion s
 	#pragma region t
 	GLYPH(
 		0b00000000,
@@ -1745,7 +1745,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion t
 	#pragma region u
 	GLYPH(
 		0b00000000,
@@ -1765,7 +1765,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion u
 	#pragma region v
 	GLYPH(
 		0b00000000,
@@ -1785,7 +1785,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion v
 	#pragma region w
 	GLYPH(
 		0b00000000,
@@ -1805,7 +1805,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion w
 	#pragma region x
 	GLYPH(
 		0b00000000,
@@ -1825,7 +1825,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion x
 	#pragma region y
 	GLYPH(
 		0b00000000,
@@ -1845,7 +1845,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b01000010,
 		0b00111100
 	),
-	#pragma endregion
+	#pragma endregion y
 	#pragma region z
 	GLYPH(
 		0b00000000,
@@ -1865,7 +1865,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion z
 	#pragma region OpenCurlyBracket
 	GLYPH(
 		0b00000000,
@@ -1885,7 +1885,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion OpenCurlyBracket
 	#pragma region VerticalBar
 	GLYPH(
 		0b00000000,
@@ -1905,7 +1905,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion VerticalBar
 	#pragma region CloseCurlyBracket
 	GLYPH(
 		0b00000000,
@@ -1925,7 +1925,7 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion CloseCurlyBracket
 	#pragma region Tilde
 	GLYPH(
 		0b00000000,
@@ -1945,6 +1945,6 @@ Glyph DerechoBuiltInFont[] = {
 		0b00000000,
 		0b00000000
 	),
-	#pragma endregion
+	#pragma endregion Tilde
 	EMPTY_GLYPH		// 0x7F DEL
 };
