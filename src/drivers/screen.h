@@ -48,7 +48,21 @@ typedef struct
 #define COLOUR_FATAL	COLOUR_CRIMSON
 #define COLOUR_PROCESS	COLOUR_AZURE
 
+/// @brief Initialises screen
 void InitScreen();
+
+/// @brief Plots a pixel on the screen
+/// @param x x-coordinate to plot pixel to
+/// @param y y-coordinate to plot pixel to
+/// @param colour Colour of pixel to be plotted
 void PlotPixel(uint16_t x, uint16_t y, Colour colour);
+/// @brief Writes a character to the screen
+/// @param c Character to write
+/// @param x x-coordinate to write character to
+/// @param y y-coordinate to write character to
+/// @param colour Colour of character to write
 void PlotCharacter(char c, uint16_t x, uint16_t y, Colour colour);
+/// @brief Writes a string to the screen
+/// @param s String to write
+/// @param colour Colour of string to write
 void PlotString(char* s, Colour colour);

@@ -45,18 +45,6 @@ void InitialiseMemoryMap()
 		else break;
 	}
 
-	uint64_t BestAllocStart = 0, BestNumPages = 0;							// Find the best place to allocate memory from
-	for(int x = 0; x < UEFIMemoryMap.MapSize; x++)
-	{
-		EFI_MEMORY_DESCRIPTOR* Descriptor = (EFI_MEMORY_DESCRIPTOR*)(		// Get next descriptor
-			(uint64_t)UEFIMemoryMap.Map + (x * UEFIMemoryMap.DescriptorSize)
-		);
-		if(Descriptor->Type != EfiConventionalMemory) continue;				// Ignore sections that aren't conventional (allocatable) memory
-		if(Descriptor->NumberOfPages <= BestNumPages) continue;				// Ignore any sections that aren't bigger than the current biggest
-		BestNumPages = Descriptor->NumberOfPages;
-		BestAllocStart = Descriptor->PhysicalStart;
-	}
-
 	BI.UEFIMemoryMap = &UEFIMemoryMap;
 
 	Print(L"- Memory Map Initialised.\r\n");

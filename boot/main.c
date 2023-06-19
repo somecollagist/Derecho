@@ -12,6 +12,8 @@ BootInfo BI;
 
 uint16_t c;
 
+/// @brief UEFI bootloader, called by the BIOS/UEFI.
+/// @return Success or failure of bootloader.
 EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable)
 {
 	InitializeLib(ImageHandle, SystemTable);

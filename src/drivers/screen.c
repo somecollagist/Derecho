@@ -77,6 +77,7 @@ BitMask:																					// Uncertain if this works, docs weren't too clear
 	return;
 }
 
+/// @brief Moves the cursor position to the next location
 void CycleToNextCharPosition()
 {
 	if(++CharX > UEFIGraphics.MaxX)

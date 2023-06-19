@@ -31,6 +31,8 @@ typedef struct
 	UEFIMemoryMap_t*			UEFIMemoryMap;
 } BootInfo;
 
+/// @brief Unpacks the bootinfo from the bootloader to necessary structs
+/// @param bootinfo Pointer to the bootinfo struct passed to kernel main from the EFI bootloader
 void UnpackBootInfo(BootInfo* bootinfo);
 
 extern UEFIGraphics_t			UEFIGraphics;

@@ -41,6 +41,6 @@ run:
 		-net none \
 		-usb $(IMG) \
 		-vga std \
-		-m 1G
+		-m 256M
 
 

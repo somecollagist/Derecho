@@ -1,4 +1,4 @@
-/* This is a copy of zap0light16.psf adapted for Derecho. Find a copy here: https://www.zap.org.au/projects/console0fonts0zap/
+/* This is a modified copy of zap0light16.psf adapted for Derecho. Find a copy here: https://www.zap.org.au/projects/console0fonts0zap/
 
 Copyright © 2004–19, John Zaitseff.
 
@@ -383,10 +383,10 @@ Glyph DerechoBuiltInFont[] = {
 		0b00111100,
 		0b01000010,
 		0b01000010,
-		0b01000010,
+		0b01000110,
 		0b01001010,
 		0b01010010,
-		0b01000010,
+		0b01100010,
 		0b01000010,
 		0b01000010,
 		0b00111100,
