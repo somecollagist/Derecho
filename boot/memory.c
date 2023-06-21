@@ -1,16 +1,10 @@
-#include "UEFImemory.h"
-
-#include <bootinfo.h>
-#include <main.h>
-#include <types.h>
-#include <efi.h>
-#include <efilib.h>
+#include "bootloader.h"
 
 UEFIMemoryMap_t UEFIMemoryMap;
 
 uint8_t MemoryInitialised = 0;
 
-void InitialiseMemoryMap()
+void InitMemoryMap()
 {
 	if(MemoryInitialised) return;
 

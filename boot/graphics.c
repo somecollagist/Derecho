@@ -1,8 +1,7 @@
-#include "UEFIgraphics.h"
+#include "bootloader.h"
 
 #include <bootinfo.h>
 #include <font.h>
-#include <main.h>
 #include <types.h>
 #include <efi.h>
 #include <efilib.h>
@@ -11,7 +10,7 @@ const uint64_t MaxResolution = 1920*1080;
 
 UEFIGraphics_t UEFIGraphics;
 
-void InitialiseGraphics()
+void InitGraphics()
 {
 	EFI_GUID GOPGuid = EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID;
 	EFI_GRAPHICS_OUTPUT_PROTOCOL* GOP;
@@ -97,5 +96,13 @@ void InitialiseGraphics()
 		L"- Graphical Mode set, resolution is %dx%d\r\n",
 		UEFIGraphics.HorizontalResolution,
 		UEFIGraphics.VerticalResolution
+	);
+}
+
+void ClearGraphics()
+{
+	uefi_call_wrapper(
+		ST->ConOut->ClearScreen, 1,
+		ST->ConOut
 	);
 }

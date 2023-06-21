@@ -6,23 +6,23 @@ ENTRY(_start)
 SECTIONS
 {
 	_KernelStart = .;
-	KernelEntrySection :
+	KernelEntrySection : ALIGN(0x1000)
 	{
 		*(KernelEntrySection)
 	}
-	.text :
+	.text : ALIGN(0x1000)
 	{
 		*(.text)
 	}
-	.data :
+	.data : ALIGN(0x1000)
 	{
 		*(.data)
 	}
-	.rodata :
+	.rodata : ALIGN(0x1000)
 	{
 		*(.rodata)
 	}
-	.bss :
+	.bss : ALIGN(0x1000)
 	{
 		*(COMMON)
 		*(.bss)
