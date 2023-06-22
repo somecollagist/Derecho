@@ -141,7 +141,7 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 		ImageHandle,
 		BI.UEFIMemoryMap->MapKey
 	);
-
+	
 	ClearGraphics();
 
 	KernelStart(&BI);

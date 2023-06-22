@@ -20,6 +20,10 @@ Firstly, run `setup/setup-(os).sh` to install all the necessary build packages f
 ## Contributing to Derecho
 Contributions are very welcome! I'm just a man, and my time isn't plentiful in nature, but I promise I'll process any pull requests as soon as I can.
 
+### Important Considerations
+ - A value isn't necessarily guaranteed to be a given value when declared - sometimes this means ignoring a guard statement, other times it means getting creative about how you set variables.
+
+### Development
 To start contributing, run `setup/setup-(os).sh` as described in [Running Derecho](#running-derecho). From there, write your changes and run `make` to compile the source code, or `make run` to run the compiled OS in QEMU.
 
 Development is pretty open-ended so do whatever you want, but there's a few things to adhere to:

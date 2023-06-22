@@ -32,11 +32,6 @@ int _start(BootInfo* bootinfo)
 		GetReservedMemory()/1024
 	);
 
-	for(int x = 0; x < 20; x++)
-	{
-		printf(COLOUR_SUCCESS, "Requested page: 0x%x\n", (uint64_t)RequestPage());
-	}
-
 	for(;;){}
 	return 0;
 }

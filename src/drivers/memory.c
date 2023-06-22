@@ -49,22 +49,14 @@ void SetPageUsage(uint64_t index, bool value)
 	uint8_t Mask = MicroIndex;
 	if(!value)
 		MicroIndex = ~MicroIndex;
-
+		
 	MBitmap.Buffer[MacroIndex] ^= Mask;
 	if(!value)
 		MBitmap.Buffer[MacroIndex] = ~MBitmap.Buffer[MacroIndex];
-
 }
-
-bool IsMemoryInitialised = false;
 
 void InitMemory()
 {
-	// Guard statement, doesn't init memory twice
-	if(IsMemoryInitialised)
-		return;
-
-	IsMemoryInitialised = true;
 	TotalMemory = 0;
 	FreeMemory = 0;
 	UsedMemory = 0;
@@ -114,6 +106,7 @@ void InitMemory()
 			
 			default:
 				ReservePages(desc->PhysicalStart, desc->NumberOfPages);
+				break;
 		}
 	}
 	LockPages(&_KernelStart, ((uint64_t)&_KernelEnd-(uint64_t)&_KernelStart) / PAGESIZE + 1);

@@ -30,6 +30,7 @@ all: $(ATAR) $(CTAR)
 			-j .rela.* \
 			-j .reloc \
 			--target efi-app-x86_64 --subsystem=10 $(BOOTBIN)/boot.so $(BOOTBIN)/BOOTX64.EFI
+	objdump --all-headers $(BOOTBIN)/BOOTX64.EFI >> $(BOOTBIN)/BOOTX64.txt
 
 $(BOOTBIN)/%.o: $(BOOTSRC)/%.c
 	mkdir -p $(shell dirname $@)

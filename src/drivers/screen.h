@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <stdarg.h>
 
 typedef struct
 {
@@ -42,7 +43,7 @@ typedef struct
 #define COLOUR_WHITE	COLOUR(0xFF, 0xFF, 0xFF)
 
 #define COLOUR_STDOUT	COLOUR_WHITE
-#define COLOUR_STDIN	COLOUR_CYAN
+#define COLOUR_STDIN	COLOUR_TEAL
 #define COLOUR_STDERR	COLOUR_RED
 #define COLOUR_SUCCESS	COLOUR_GREEN
 #define COLOUR_FATAL	COLOUR_CRIMSON
@@ -66,3 +67,8 @@ void PlotCharacter(char c, uint16_t x, uint16_t y, Colour colour);
 /// @param s String to write
 /// @param colour Colour of string to write
 void PlotString(char* s, Colour colour);
+/// @brief Formatted print
+/// @param colour Colour to print text as
+/// @param str String to print out, may be infixed with %
+/// @param ... Extra values to infix to the string, denoted by %
+void printf(Colour colour, char* str, ...);
