@@ -2,12 +2,6 @@
 
 BootInfo BI;
 
-#define FailWithMessage(msg) 	\
-{								\
-	Print(msg);					\
-	goto BootloaderFail;		\
-}
-
 EFI_INPUT_KEY Key;
 
 EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable)
@@ -25,6 +19,9 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 	InitGraphics();
 	InitMemoryMap();
 
+	BI.EFIConfigAddr	= (uint64_t)(ST->ConfigurationTable);
+	BI.EFIConfigEntries	= (uint64_t)(ST->NumberOfTableEntries);
+
 	EFI_FILE* Kernel = LoadFile(NULL, L"kernel.elf");
 	if(Kernel == NULL)
 		FailWithMessage(L"! Could not locate kernel :(\r\n")
@@ -32,7 +29,6 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 		Print(L"- Kernel located successfully.\r\n");
 
 	Elf64_Ehdr* EHeader = NULL;
-	
 	UINTN EHeaderSize = sizeof(Elf64_Ehdr);
 	uefi_call_wrapper(
 		ST->BootServices->AllocatePool, 3,
@@ -108,7 +104,7 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 					&Segment
 				);
 
-				UINTN KernelSize = phdr->p_filesz;
+				UINTN FileSize = phdr->p_filesz;
 				uefi_call_wrapper(
 					Kernel->SetPosition, 2,
 					Kernel,
@@ -117,13 +113,12 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 				uefi_call_wrapper(
 					Kernel->Read, 3,
 					Kernel,
-					&KernelSize,
+					&FileSize,
 					(void*)Segment
 				);
 				break;
 		}
 	}
-
 	Print(L"- Kernel loaded successfully.\r\n");
 
 	__attribute__((sysv_abi))

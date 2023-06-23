@@ -30,6 +30,8 @@ typedef struct
 {
 	UEFIGraphics_t*				UEFIGraphics;
 	UEFIMemoryMap_t*			UEFIMemoryMap;
+	uint64_t					EFIConfigEntries;
+	uint64_t					EFIConfigAddr;
 } BootInfo;
 
 /// @brief Unpacks the bootinfo from the bootloader to necessary structs
@@ -38,3 +40,5 @@ void UnpackBootInfo(BootInfo* bootinfo);
 
 extern UEFIGraphics_t			UEFIGraphics;
 extern UEFIMemoryMap_t			UEFIMemoryMap;
+extern uint64_t					EFIConfigEntries;
+extern uint64_t					EFIConfigAddr;

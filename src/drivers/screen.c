@@ -155,7 +155,7 @@ void printf(Colour colour, char* str, ...)
 					break;
 				
 				case 'd':	// int (base 10)
-					strcpy(itoa(va_arg(vl, int), 10), temp);
+					strcpy(itoa(va_arg(vl, int), 10, 0), temp);
 					while(*temp != '\0')
 					{
 						buffer[j] = *temp;
@@ -165,7 +165,15 @@ void printf(Colour colour, char* str, ...)
 					break;
 
 				case 'x':	// int (base 16)
-					strcpy(itoa(va_arg(vl, int), 16), temp);
+					i++;
+					uint8_t length = 0;
+					if(str[i] > '0' && str[i] <= '9')
+						length = (uint8_t)str[i] - '0';
+					else if(str[i] >= 'A' && str[i] <= 'F')
+						length = (uint8_t)str[i] - 'A';
+					else
+						i--;
+					strcpy(itoa(va_arg(vl, int), 16, length), temp);
 					while(*temp != '\0')
 					{
 						buffer[j] = *temp;

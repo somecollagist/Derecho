@@ -1,6 +1,6 @@
 #include <bootinfo.h>
 #include <drivers/memory.h>
-#include <gdt.h>
+#include <efi/systemtable.h>
 #include <screen.h>
 #include <string.h>
 #include <types.h>
@@ -22,6 +22,8 @@ int _start(BootInfo* bootinfo)
 
 	InitGDT();
 	InitMemory();
+
+	TraverseSystemTable();
 
 	for(;;){}
 	return 0;
