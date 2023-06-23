@@ -3,8 +3,6 @@
 #include <bootinfo.h>
 #include <font.h>
 #include <memory.h>
-#include <types.h>
-#include <stdarg.h>
 
 UEFIGraphics_t UEFIGraphics;
 

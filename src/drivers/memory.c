@@ -1,7 +1,7 @@
 #include "memory.h"
 
 #include <bootinfo.h>
-#include <types.h>
+#include <screen.h>
 
 #define PAGESIZE 0x1000
 
@@ -110,6 +110,17 @@ void InitMemory()
 		}
 	}
 	LockPages(&_KernelStart, ((uint64_t)&_KernelEnd-(uint64_t)&_KernelStart) / PAGESIZE + 1);
+
+	printf(COLOUR_STDOUT,
+		" --- Total Memory: %d KiB\n"
+		"  |--- Free:       %d KiB\n"
+		"  |--- Used:       %d KiB\n"
+		"  |--- Reserved:   %d KiB\n",
+		GetTotalMemory()/1024,
+		GetFreeMemory()/1024,
+		GetUsedMemory()/1024,
+		GetReservedMemory()/1024
+	);
 }
 
 void* RequestPage()

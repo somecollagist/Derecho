@@ -1,10 +1,7 @@
 #include "bootloader.h"
 
-#include <bootinfo.h>
 #include <font.h>
 #include <types.h>
-#include <efi.h>
-#include <efilib.h>
 
 const uint64_t MaxResolution = 1920*1080;
 

@@ -2,6 +2,7 @@
 
 #include <efi.h>
 #include <efilib.h>
+#include <types.h>
 
 typedef struct 
 {

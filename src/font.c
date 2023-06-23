@@ -9,8 +9,6 @@ This font package is distributed in the hope that it will be useful, but WITHOUT
 
 #include "font.h"
 
-#include <types.h>
-
 /*
 	I REALLY wanted to use #pragma region for this but apparently this is a hitherto unknown bug
 	in GCC v13.x, so we'll make do with #ifndef and #endif guard statements. It's a crappy

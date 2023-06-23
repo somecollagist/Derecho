@@ -5,9 +5,9 @@ CFLG := -I$(GNUEFI)/inc -I$(GNUEFI)/lib -I$(ROOT) \
 CSRC := $(shell find $(SRC) -name "*.c")
 CTAR := $(patsubst $(SRC)/%,$(BIN)/%,$(patsubst %.c,%.o,$(CSRC)))
 
-AFLG := 
+AFLG := -f elf64
 ASRC := $(shell find $(SRC) -name "*.asm")
-ATAR :=  $(patsubst $(SRC)/%,$(BIN)/%,$(patsubst %.asm,%.o,$(ASRC)))
+ATAR := $(patsubst $(SRC)/%,$(BIN)/%,$(patsubst %.asm,%.o,$(ASRC)))
 
 LDFLG := -T linker.ld \
 		-static -Bsymbolic -nostdlib
