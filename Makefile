@@ -12,7 +12,7 @@ export CC		:= gcc
 export AS		:= nasm
 export LD		:= ld
 
-export CWARNS	:= -Wall -Wno-implicit-function-declaration
+export CWARNS	:= -Wall -Wno-implicit-function-declaration -Wno-comment
 
 # .SILENT: prebuild build clean
 

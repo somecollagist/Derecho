@@ -33,5 +33,5 @@ void InitGDT()
 	GDTDesc.Size				= sizeof(GDT) - 1;
 	GDTDesc.Offset				= (uint64_t)&DefaultGDT;
 	LoadGDT(&GDTDesc);
-	printf(COLOUR_SUCCESS, " --- GDT Loaded.\n");
+	printf(COLOUR_SUCCESS, " - GDT Loaded.\n");
 }

@@ -12,6 +12,12 @@ char* itoa(uint64_t num, uint8_t base, uint8_t length)
 	int pos, opos, top = 0;
 
 	if(num == 0){
+		if(length == 0)
+		{
+			buffer[0] = '0';
+			buffer[1] = '\0';
+			return buffer;
+		}
 		while(pos < length)
 		{
 			buffer[pos] = '0';

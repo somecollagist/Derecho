@@ -15,7 +15,7 @@ The objective is to provide a TUI workstation - no graphics libraries are planne
 ## Running Derecho
 **Disclaimer: Derecho is a very basic Operating System. There's no hand-holding and it's still very much in alpha, so run at your own risk.**
 
-Firstly, run `setup/setup-(os).sh` to install all the necessary build packages for your operating system. These scripts will require root access in order to work, but they'll prompt you for sudo. Once the install is complete, run `make` in the project root. A file called `Derecho.img` will be created - this is a disk image of the OS. From here, write this to a USB stick with your favourite tool (`popsicle` is known to work, make sure you also install `udisks2` as a patch). Then plug it into a device of your choice (make sure it's booting with UEFI) and boot from the USB.
+Firstly, run `setup/setup-(os).sh` to install all the necessary build packages for your operating system. These scripts will require root access in order to work, but they'll prompt you for sudo. Once the install is complete, run `make` in the project root. A file called `Derecho.img` will be created - this is a disk image of the OS. From here, write this to a USB stick with your favourite tool (`popsicle` is known to work, make sure you also install `udisks2` as a patch). Then plug it into a device of your choice (make sure it's booting with UEFI) and boot from the USB. Alternatively, you can run `make run` in the terminal to boot Derecho using QEMU.
 
 ## Contributing to Derecho
 Contributions are very welcome! I'm just a man, and my time isn't plentiful in nature, but I promise I'll process any pull requests as soon as I can.

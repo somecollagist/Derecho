@@ -1,4 +1,5 @@
 #include <bootinfo.h>
+#include <cpu/desctables.h>
 #include <drivers/memory.h>
 #include <efi/systemtable.h>
 #include <screen.h>
@@ -24,6 +25,7 @@ int _start(BootInfo* bootinfo)
 	InitMemory();
 
 	TraverseSystemTable();
+	ParseSystemDescriptorTables();
 
 	for(;;){}
 	return 0;
