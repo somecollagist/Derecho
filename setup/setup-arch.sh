@@ -6,11 +6,14 @@ cd ..
 
 # install packages
 sudo pacman -Syy
-sudo pacman -S nasm gcc binutils qemu-desktop ovmf git make mtools
+sudo pacman -S nasm gcc binutils qemu-desktop ovmf git make mtools curl unzip
 
 # install gnu-uefi headers
 rm -rf gnu-efi
-git clone https://git.code.sf.net/p/gnu-efi/code gnu-efi
+curl https://sourceforge.net/code-snapshots/git/g/gn/gnu-efi/code.git/gnu-efi-code-8b018e67212957de176292f95718df48f49a418b.zip -o gnu-efi.zip
+unzip gnu-efi.zip
+rm gnu-efi.zip
+mv gnu-efi-code-8b018e67212957de176292f95718df48f49a418b gnu-efi
 cd gnu-efi
 make
 cd ..

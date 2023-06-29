@@ -36,3 +36,4 @@ Development is pretty open-ended so do whatever you want, but there's a few thin
 Want some ideas of what to implement? Here's some to get you started:
  - Setup scripts for other operating systems and linux distros (read `setup/setups.md`).
  - Support for other languages (French, German, Spanish, Italian, Russian, Te Reo Māori).
+ - Better font management, maybe try get extended UTF-8?
