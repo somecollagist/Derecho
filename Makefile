@@ -42,5 +42,4 @@ run:
 		-usb $(IMG) \
 		-vga std \
 		-m 256M
-
-
+		

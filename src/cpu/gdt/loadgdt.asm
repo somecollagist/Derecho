@@ -1,6 +1,6 @@
 [bits 64]
 
-global LoadGDT
+[global LoadGDT]
 LoadGDT:
 	cli
 	lgdt [rdi]

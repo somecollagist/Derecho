@@ -1,5 +1,6 @@
 #include <bootinfo.h>
 #include <cpu/desctables.h>
+#include <cpu/interrupts/interrupts.h>
 #include <drivers/memory.h>
 #include <efi/systemtable.h>
 #include <screen.h>
@@ -23,9 +24,12 @@ int _start(BootInfo* bootinfo)
 
 	InitGDT();
 	InitMemory();
+	InitInterrupts();
 
 	TraverseSystemTable();
 	ParseSystemDescriptorTables();
+
+	// int fault = 12 / 0;
 
 	for(;;){}
 	return 0;
