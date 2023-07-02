@@ -1,8 +1,9 @@
 #include <bootinfo.h>
 #include <cpu/desctables.h>
 #include <cpu/interrupts/interrupts.h>
-#include <drivers/memory.h>
+#include <drivers/hardware/hwdrivers.h>
 #include <efi/systemtable.h>
+#include <memory.h>
 #include <screen.h>
 #include <string.h>
 #include <types.h>
@@ -29,8 +30,8 @@ int _start(BootInfo* bootinfo)
 	TraverseSystemTable();
 	ParseSystemDescriptorTables();
 
-	// int fault = 12 / 0;
+	InstallHardwareDrivers();
 
-	for(;;){}
+	for(;;);
 	return 0;
 }

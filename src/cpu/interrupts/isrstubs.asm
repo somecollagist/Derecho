@@ -52,7 +52,8 @@ ISRCommon:
 	push r14
 	push r15
 
-	mov rdi, rsp
+	mov rdi, [rsp + 120]
+	mov rsi, rsp
 
 	call ISRHandler
 
