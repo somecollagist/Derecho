@@ -16,4 +16,15 @@ typedef struct {
 	uint32_t	CreatorRevision;
 } __attribute__((packed)) ACPISDTHeader;
 
+typedef struct {
+	uint8_t		AddressWidth;
+	uint8_t		BitWidth;
+	uint8_t		BitOffset;
+	uint8_t		AccessSize;
+	uint64_t	Address;
+} __attribute__((packed)) GenericAddressStructure;
+
 void ParseSystemDescriptorTables();
+
+void ACPIHandler(ACPISDTHeader* header);
+void FACPHandler(ACPISDTHeader* header);

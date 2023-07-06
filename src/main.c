@@ -1,5 +1,5 @@
 #include <bootinfo.h>
-#include <cpu/desctables.h>
+#include <cpu/desctables/desctables.h>
 #include <cpu/interrupts/interrupts.h>
 #include <drivers/hardware/hwdrivers.h>
 #include <efi/systemtable.h>

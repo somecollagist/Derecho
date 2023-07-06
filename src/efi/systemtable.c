@@ -1,7 +1,7 @@
 #include "systemtable.h"
 
 #include <bootinfo.h>
-#include <cpu/desctables.h>
+#include <cpu/desctables/desctables.h>
 #include <efi.h>
 #include <guids.h>
 #include <screen.h>
@@ -66,7 +66,7 @@ ConfigTableHandler(NotYetImplementedHandler)
 
 ConfigTableHandler(RSDP1Handler)
 {
-	printf(COLOUR_STDOUT, "RSDT is not supported in favour of XSDT.\n");
+	printf(COLOUR_STDOUT, " - RSDT is not supported in favour of XSDT.\n");
 	return SYSTEMTABLE_ERROR_NONE;
 }
 
@@ -84,7 +84,7 @@ ConfigTableHandler(RSDP2Handler)
 	if(Checksum != 0)
 		return SYSTEMTABLE_ERROR_BAD_RSDP_CHECKSUM;
 
-	printf(COLOUR_STDOUT, "XSDT Address: 0x%x\n", rspd.XSDTAddr);
+	printf(COLOUR_STDOUT, " - XSDT Address: 0x%x\n", rspd.XSDTAddr);
 	XSDTAddr = rspd.XSDTAddr;
 
 	return SYSTEMTABLE_ERROR_NONE;

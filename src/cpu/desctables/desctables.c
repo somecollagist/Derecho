@@ -22,10 +22,23 @@ void ParseSystemDescriptorTables()
 	int entries = ((xsdt->Header.Length - sizeof(xsdt->Header)) / 8);
 	for(int x = 0; x < entries; x++)
 	{
-		ACPISDTHeader *Header = (ACPISDTHeader*)xsdt->SDTptrs[x];
-		switch((uint32_t)(Header->Signature))
+		ACPISDTHeader* Header = (ACPISDTHeader*)xsdt->SDTptrs[x];
+		switch(
+			(Header->Signature[0]) << 24 |
+			(Header->Signature[1]) << 16 |
+			(Header->Signature[2]) << 8 |
+			(Header->Signature[3])
+		)
 		{
-			// Consult ACPI Spec, Section 5.2, tables 5.5 and 5.6for DESCRIPTION_HEADER signatures
+			// Consult ACPI Spec, Section 5.2, tables 5.5 and 5.6 for DESCRIPTION_HEADER signatures
+
+			case 'APIC':
+				APICHandler(Header);
+				break;
+
+			case 'FACP':
+				FACPHandler(Header);
+				break;
 			
 			default:
 				printf(COLOUR_STDERR, " ! Unknown ACPI System Descriptor signature \"%c%c%c%c\"\n",
