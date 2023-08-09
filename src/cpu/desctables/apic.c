@@ -1,7 +1,5 @@
 #include "desctables.h"
 
-#include <screen.h>
-
 uint8_t		LocalAPICIDs[256] = {0};
 uint64_t	LocalAPICptr;
 uint64_t	IOAPICptr;
@@ -44,24 +42,25 @@ void APICHandler(ACPISDTHeader* header)
 				} __attribute__((packed)) EntryType0;
 				EntryType0* e0 = (EntryType0*)(ptr + 2);
 
-				NumProcessors++;
-				switch(e0->Flags & 0b11)
+				switch(e0->Flags & (uint32_t)0b11)
 				{
-					case 0b00:	// Incapable, not enabled
+					case (uint32_t)0b00:	// Incapable, not enabled
 						printf(COLOUR_YELLOW, " ! Processor ID %x could not be enabled.\n", e0->ProcessorID);
 						break;
 
-					case 0b01:	// Incapable, enabled
-						printf(COLOUR_STDERR, " ! Processor ID %x is marked enabled but is incapable.\n", e0->ProcessorID);
-						break;
-
-					case 0b10:	// Capable, not enabled
+					case (uint32_t)0b10:	// Capable, not enabled
 						printf(COLOUR_STDOUT, " - Processor ID %x can be enabled.\n", e0->ProcessorID);
 						break;
 
-					case 0b11:	// Capable, enabled
+					case (uint32_t)0b01:	// Capable, lower bit takes precedence
+					case (uint32_t)0b11:
 						printf(COLOUR_STDOUT, " - Processor ID %x is enabled.\n", e0->ProcessorID);
 						LocalAPICIDs[NumProcessors++] = e0->APICID;
+						NumProcessorsEnabled++;
+						break;
+
+					default:
+						printf(COLOUR_STDERR, "0x%x16", e0->Flags);
 						break;
 				}
 				break;
@@ -140,10 +139,11 @@ void APICHandler(ACPISDTHeader* header)
 		"   |- Cores available/installed: %d/%d\n"
 		"   |- IOAPIC:                    0x%xF\n"
 		"   |- LAPIC:                     0x%xF\n"
-		"   |- Processors IDs:\n",
+		"   |- Processors IDs:",
 		NumProcessorsEnabled, NumProcessors, IOAPICptr, LAPICptr
 	);
 
 	for(int x = 0; x < NumProcessors; x++)
-		printf(COLOUR_SUCCESS, "      |- %d\n", LocalAPICIDs[x]);
+		printf(COLOUR_SUCCESS, " %d", LocalAPICIDs[x]);
+	printf(COLOUR_SUCCESS, "\n");
 }

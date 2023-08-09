@@ -1,7 +1,6 @@
 #include "desctables.h"
 
 #include <cpu/cpu.h>
-#include <screen.h>
 
 typedef struct
 {
@@ -64,6 +63,53 @@ void FACPHandler(ACPISDTHeader* header)
 	printf(COLOUR_STDOUT, " > FACP Descriptor Detected...\n");
 	
 	FADT* fadt = (FADT*)header;
+
+	/*
+	This section will parse the DSDT. It's AML bytecode and one day we may write ourselves an interpreter for it but until then, we use brute force.
+	*/
+
+	ACPISDTHeader* dsdt = (ACPISDTHeader*)fadt->XDSDT;
+	printf(COLOUR_STDOUT, " > DSDT Descriptor Detected...\n");
+	
+	uint8_t* offset = (uint8_t*)(dsdt+sizeof(ACPISDTHeader));
+	for(; offset < (uint8_t*)(dsdt+dsdt->Length); offset++)
+	{
+		if(
+			*(offset+0) == '_' &&
+			*(offset+1) == 'S' &&
+			*(offset+2) == '5' &&
+			*(offset+3) == '_'
+		)
+		{
+			break;
+		}
+	}
+	if(offset < (uint8_t*)(dsdt+dsdt->Length))
+	{
+		if((*(offset-1)==0x08) || (*(offset-2)==0x08 && *(offset-1)=='\\') && *(offset+4) == 0x12)	// Validate AML structure
+		{
+			offset += 5;
+			offset += ((*offset &0xC0)>>6) + 2;
+			
+			if(*offset == 0x0A)
+				offset++;
+			SLP_TYPa = *offset << 10;
+			offset++;
+
+			if(*offset == 0x0A)
+				offset++;
+			SLP_TYPb = *offset << 10;
+
+			SLP_EN = 1 << 13;
+			SCI_EN = 1;
+		}
+	}
+
+	PM1a_CNT = fadt->PM1AControlBlock;
+	PM1b_CNT = fadt->PM1BControlBlock;
+	PM1a_EVT = fadt->PM1AEventBlock;
+	PM1b_EVT = fadt->PM1BEventBlock;
+
 	outb(fadt->SMICommandPort, fadt->ACPIEnable);
 	printf(COLOUR_SUCCESS, " > ACPI Mode Enabled.\n");
 }

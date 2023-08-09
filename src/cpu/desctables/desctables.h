@@ -1,5 +1,6 @@
 #pragma once
 
+#include <screen.h>
 #include <types.h>
 
 extern uint64_t XSDTAddr;
@@ -28,3 +29,4 @@ void ParseSystemDescriptorTables();
 
 void ACPIHandler(ACPISDTHeader* header);
 void FACPHandler(ACPISDTHeader* header);
+void DSDTHandler(ACPISDTHeader* header);	// Pointed to by the FADT!

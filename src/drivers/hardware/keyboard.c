@@ -9,6 +9,9 @@
 void KeyboardDriver(InterruptStackFrame* frame)
 {
 	uint8_t scancode = inb(PORT_KEYBOARD);
+	printf(COLOUR_STDOUT, "0x%x", scancode);
+	if(scancode == 0x0C)
+		ACPIPowerOff();
 }
 
 void InstallKeyboardHandler()
