@@ -86,6 +86,10 @@ void CycleToNextCharPosition()
 		if(++CharY > UEFIGraphics.MaxY)
 		{
 			// Scroll down
+			InitScreen();
+			for(int y = 0; y < UEFIGraphics.VerticalResolution; y++)
+				for(int x = 0; x < UEFIGraphics.HorizontalResolution; x++)
+					PlotPixel(x, y, COLOUR_BLACK);
 		}
 	}
 }
@@ -126,7 +130,7 @@ void PlotString(char* s, Colour colour)
 void printf(Colour colour, char* str, ...)
 {
 	va_list vl;
-	int i = 0, j = 0, k = 0;
+	int i = 0, j = 0, k = 0, length = 0;
 	char buffer[256] = {0};
 	char temporarybuffer[256] = {0};
 	char* temp = &temporarybuffer[0];
@@ -155,6 +159,14 @@ void printf(Colour colour, char* str, ...)
 					break;
 				
 				case 'd':	// int (base 10)
+					i++;
+					length = 0;
+					if(str[i] > '0' && str[i] <= '9')
+						length = (uint8_t)str[i] - '0';
+					else if(str[i] >= 'A' && str[i] <= 'F')
+						length = (uint8_t)str[i] - 'A' + 11;
+					else
+						i--;
 					strcpy(itoa(va_arg(vl, long unsigned int), 10, 0), temp);
 					while(*temp != '\0')
 					{
@@ -166,7 +178,7 @@ void printf(Colour colour, char* str, ...)
 
 				case 'x':	// int (base 16)
 					i++;
-					uint8_t length = 0;
+					length = 0;
 					if(str[i] > '0' && str[i] <= '9')
 						length = (uint8_t)str[i] - '0';
 					else if(str[i] >= 'A' && str[i] <= 'F')

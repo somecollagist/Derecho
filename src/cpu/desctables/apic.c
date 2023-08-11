@@ -139,7 +139,7 @@ void APICHandler(ACPISDTHeader* header)
 		"   |- Cores available/installed: %d/%d\n"
 		"   |- IOAPIC:                    0x%xF\n"
 		"   |- LAPIC:                     0x%xF\n"
-		"   |- Processors IDs:",
+		"   |- Processor IDs:",
 		NumProcessorsEnabled, NumProcessors, IOAPICptr, LAPICptr
 	);
 
