@@ -38,7 +38,7 @@ SystemTableReturnCode TraverseSystemTable()
 			retc = SYSTEMTABLE_ERROR_UNKNOWN_GUID;
 
 		if (retc == SYSTEMTABLE_ERROR_UNKNOWN_GUID)
-			printf(COLOUR_PROCESS, " - Encountered Unknown GUID: %x8-%x4-%x4-%x2%x2%x2%x2%x2%x2%x2%x2, skipping...\n",
+			printf(COLOUR_STDWARN, " - Encountered Unknown GUID: %x8-%x4-%x4-%x2%x2%x2%x2%x2%x2%x2%x2, skipping...\n",
 				ConfigTable->VendorGuid.Data1,
 				ConfigTable->VendorGuid.Data2,
 				ConfigTable->VendorGuid.Data3,

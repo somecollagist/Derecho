@@ -9,7 +9,7 @@ uint8_t		NumProcessorsEnabled;
 
 void APICHandler(ACPISDTHeader* header)
 {
-	printf(COLOUR_STDOUT, " > APIC Descriptor Detected...\n");
+	printf(COLOUR_STDOUT, " - APIC Descriptor Detected...\n");
 
 	NumProcessors = NumProcessorsEnabled = 0;
 
@@ -45,11 +45,11 @@ void APICHandler(ACPISDTHeader* header)
 				switch(e0->Flags & (uint32_t)0b11)
 				{
 					case (uint32_t)0b00:	// Incapable, not enabled
-						printf(COLOUR_YELLOW, " ! Processor ID %x could not be enabled.\n", e0->ProcessorID);
+						printf(COLOUR_STDERR, " ! Processor ID %x could not be enabled.\n", e0->ProcessorID);
 						break;
 
 					case (uint32_t)0b10:	// Capable, not enabled
-						printf(COLOUR_STDOUT, " - Processor ID %x can be enabled.\n", e0->ProcessorID);
+						printf(COLOUR_STDWARN, " - Processor ID %x can be enabled.\n", e0->ProcessorID);
 						break;
 
 					case (uint32_t)0b01:	// Capable, lower bit takes precedence

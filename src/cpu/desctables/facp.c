@@ -60,7 +60,7 @@ typedef struct
 
 void FACPHandler(ACPISDTHeader* header)
 {
-	printf(COLOUR_STDOUT, " > FACP Descriptor Detected...\n");
+	printf(COLOUR_STDOUT, " - FACP Descriptor Detected...\n");
 	
 	FADT* fadt = (FADT*)header;
 
@@ -69,7 +69,7 @@ void FACPHandler(ACPISDTHeader* header)
 	*/
 
 	ACPISDTHeader* dsdt = (ACPISDTHeader*)fadt->XDSDT;
-	printf(COLOUR_STDOUT, " > DSDT Descriptor Detected...\n");
+	printf(COLOUR_STDOUT, " - DSDT Descriptor Detected...\n");
 	
 	uint8_t* offset = (uint8_t*)(dsdt+sizeof(ACPISDTHeader));
 	for(; offset < (uint8_t*)(dsdt+dsdt->Length); offset++)
@@ -111,5 +111,5 @@ void FACPHandler(ACPISDTHeader* header)
 	PM1b_EVT = fadt->PM1BEventBlock;
 
 	outb(fadt->SMICommandPort, fadt->ACPIEnable);
-	printf(COLOUR_SUCCESS, " > ACPI Mode Enabled.\n");
+	printf(COLOUR_SUCCESS, " - ACPI Mode Enabled.\n");
 }

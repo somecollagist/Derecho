@@ -31,6 +31,7 @@ void ParseSystemDescriptorTables()
 		)
 		{
 			// Consult ACPI Spec, Section 5.2, tables 5.5 and 5.6 for DESCRIPTION_HEADER signatures
+			// https://uefi.org/sites/default/files/resources/ACPI_Spec_6_5_Aug29.pdf
 
 			case 'APIC':
 				APICHandler(Header);
@@ -39,10 +40,17 @@ void ParseSystemDescriptorTables()
 			case 'FACP':
 				FACPHandler(Header);
 				break;
+
+			case 'BGRT': // Boot Graphics record table
+				printf(COLOUR_STDWARN, " - Ignored ACPI System Descriptor signature \"%c%c%c%c\"\n",
+					Header->Signature[0], Header->Signature[1], Header->Signature[2], Header->Signature[3]
+				);
+				break;
 			
 			default:
 				printf(COLOUR_STDERR, " ! Unknown ACPI System Descriptor signature \"%c%c%c%c\"\n",
-					Header->Signature[0], Header->Signature[1], Header->Signature[2], Header->Signature[3]);
+					Header->Signature[0], Header->Signature[1], Header->Signature[2], Header->Signature[3]
+				);
 				break;
 		}
 	}
