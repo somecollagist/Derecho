@@ -7,6 +7,7 @@ export BOOTSRC	:= $(ROOT)/boot
 export GNUEFI	:= $(ROOT)/gnu-efi
 export BIN		:= $(ROOT)/bin
 export BOOTBIN	:= $(ROOT)/bootbin
+export ISO		:= $(ROOT)/iso
 
 export CC		:= gcc
 export AS		:= nasm
@@ -26,13 +27,31 @@ prebuild:
 build:
 	make -C $(BOOTSRC)
 	make -C $(SRC)
-	dd if=/dev/zero of=$(IMG) bs=1k count=1440
-	mformat -i $(IMG) -f 1440 ::
-	mmd -i $(IMG) ::/EFI
-	mmd -i $(IMG) ::/EFI/BOOT
-	mcopy -i $(IMG) $(BOOTBIN)/BOOTX64.EFI ::/EFI/BOOT
-	mcopy -i $(IMG) $(BIN)/kernel.elf ::
-	mcopy -i $(IMG) startup.nsh ::
+
+	dd if=/dev/zero of=$(IMG) bs=1M count=16
+	sudo losetup -fP --show $(IMG) > /tmp/dlos.txt
+	$(eval LODEV := $(shell cat /tmp/dlos.txt))
+	sudo fdisk $(LODEV) < $(ROOT)/fdiskcmds
+	sudo mformat -i $(LODEV)p1 -f 1440 ::
+	# sudo mkfs.ext2 $(LODEV)p2
+	
+	# EFI
+	sudo mount $(LODEV)p1 /mnt
+	sudo mkdir /mnt/EFI
+	sudo mkdir /mnt/EFI/BOOT
+	sudo cp $(BOOTBIN)/BOOTX64.EFI /mnt/EFI/BOOT/BOOTX64.EFI
+	sudo cp startup.nsh /mnt/startup.nsh
+	sudo cp $(BIN)/kernel.elf /mnt/kernel.elf
+	sudo umount /mnt
+
+	# # ext2
+	# sudo mount $(LODEV)p2 /mnt
+	# sudo cp -r $(ISO) /mnt
+	# sudo umount /mnt
+	
+	sudo fdisk -l $(LODEV)
+
+	sudo losetup -d $(LODEV)
 
 run:
 	qemu-system-x86_64 \

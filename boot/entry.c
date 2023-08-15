@@ -2,8 +2,6 @@
 
 BootInfo BI;
 
-EFI_INPUT_KEY Key;
-
 EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTable)
 {
 	IM = ImageHandle;
@@ -136,7 +134,7 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 		ImageHandle,
 		BI.UEFIMemoryMap->MapKey
 	);
-	
+
 	ClearGraphics();
 
 	KernelStart(&BI);
@@ -149,6 +147,7 @@ EFI_STATUS EFIAPI efi_main (EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE* SystemTabl
 		Print(L"\r\nPress ESC to continue to EFI shell...\r\n");
 
 		UINTN KeyEvent = 0;
+		EFI_INPUT_KEY Key;
 		do
 		{
 			uefi_call_wrapper(

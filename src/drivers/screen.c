@@ -2,7 +2,7 @@
 
 #include <bootinfo.h>
 #include <font.h>
-#include <memory.h>
+#include <mem/mem.h>
 
 UEFIGraphics_t UEFIGraphics;
 

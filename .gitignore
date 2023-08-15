@@ -6,3 +6,4 @@ OVMF
 bin
 bootbin
 *.img
+*.elf

@@ -3,13 +3,13 @@
 #include <cpu/interrupts/interrupts.h>
 #include <drivers/hardware/hwdrivers.h>
 #include <efi/systemtable.h>
-#include <memory.h>
+#include <mem/mem.h>
 #include <screen.h>
 #include <string.h>
 #include <types.h>
 
 const char* OS          = "Derecho";
-const char* VERSION     = "0.0.3";
+const char* VERSION     = "Alpha";
 const char* VERSIONNAME = "Hydrogen";
 
 __attribute__((section("KernelEntrySection")))
