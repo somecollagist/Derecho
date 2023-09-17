@@ -9,7 +9,7 @@
 #include <types.h>
 
 const char* OS          = "Derecho";
-const char* VERSION     = "0.0.3";
+const char* VERSION     = "Alpha";
 const char* VERSIONNAME = "Hydrogen";
 
 __attribute__((section("KernelEntrySection")))

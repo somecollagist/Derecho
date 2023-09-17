@@ -8,7 +8,7 @@ cd ..
 
 # install packages
 sudo dnf upgrade
-sudo dnf install --refresh nasm gcc binutils qemu git make mtools curl unzip e2fsprogs
+sudo dnf install --refresh nasm gcc binutils qemu git make dosfstools curl unzip e2fsprogs gdisk
 # (ovmf is a dependency of qemu)
 
 # install gnu-uefi headers
