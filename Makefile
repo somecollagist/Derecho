@@ -22,12 +22,15 @@ LOEXT_MNT		:= /mnt/$(OS)_ext
 
 # .SILENT: prebuild build clean
 
-all: prebuild build
+all: clean prebuild build
 
-prebuild:
+clean:
 	clear
 	rm -rf $(BIN) $(BOOTBIN) $(IMG)
 	mkdir $(BIN) $(BOOTBIN)
+
+prebuild:
+	git clone https://www.github.com/somecollagist/gnu-efi-3.0.15 gnu-efi && make -C gnu-efi
 
 build:
 	make -C $(BOOTSRC)
@@ -36,7 +39,7 @@ build:
 	dd if=/dev/zero of=$(IMG) bs=1M count=256
 	sudo gdisk $(IMG) < $(ROOT)/gdiskcmds
 	sudo losetup -P $(LODEV) $(IMG)
-	
+
 	sudo mformat -i $(LOEFI) -f 2880 ::
 	sudo mkfs.ext2 $(LOEXT)
 
@@ -48,7 +51,7 @@ build:
 	sudo cp $(BOOTBIN)/BOOTX64.EFI $(LOEFI_MNT)/EFI/BOOT/BOOTX64.EFI
 	sudo cp startup.nsh $(LOEFI_MNT)/startup.nsh
 	sudo cp $(BIN)/kernel.elf $(LOEFI_MNT)/kernel.elf
-	
+
 	sudo umount $(LOEFI_MNT)
 	sudo umount $(LOEXT_MNT)
 	sudo rm -rf $(LOEFI_MNT) $(LOEXT_MNT)
@@ -64,4 +67,4 @@ run:
 		-usb $(IMG) \
 		-vga std \
 		-m 256M
-		
+
