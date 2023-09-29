@@ -45,3 +45,11 @@ char* itoa(uint64_t num, uint8_t base, uint8_t length)
 	reverse[opos] = '\0';
 	return reverse;
 }
+
+size_t strlen(const char* str)
+{
+	size_t i = 0;
+	while(str[i] != 0) 
+		i++;
+	return i;
+}

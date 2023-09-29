@@ -9,6 +9,8 @@ typedef int					int32_t;
 typedef unsigned int		uint32_t;
 typedef long int			int64_t;
 typedef long unsigned int	uint64_t;
+typedef signed long         ssize_t;
+typedef unsigned long       size_t;
 
 #define nullptr ((void*)0)
 
