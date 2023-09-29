@@ -15,8 +15,10 @@ export LD		:= ld
 export CWARNS	:= -Wall -Wno-implicit-function-declaration -Wno-comment
 
 LODEV			:= /dev/loop30
-LOEFI			:= /dev/loop30p1
+LOEFI			:= $(LODEV)p1
 LOEFI_MNT		:= /mnt/$(OS)_efi
+LOEXT			:= $(LODEV)p2
+LOEXT_MNT		:= /mnt/$(OS)_ext
 
 # .SILENT: prebuild build clean
 
@@ -35,9 +37,11 @@ build:
 	sudo gdisk $(IMG) < $(ROOT)/gdiskcmds
 	sudo losetup -P $(LODEV) $(IMG)
 	
-	sudo mformat -i $(LOEFI) -f 1440 ::
+	sudo mformat -i $(LOEFI) -f 2880 ::
+	sudo mkfs.ext2 $(LOEXT)
 
 	sudo mount --mkdir $(LOEFI) $(LOEFI_MNT)
+	sudo mount --mkdir $(LOEXT) $(LOEXT_MNT)
 
 	sudo mkdir $(LOEFI_MNT)/EFI
 	sudo mkdir $(LOEFI_MNT)/EFI/BOOT
@@ -46,8 +50,10 @@ build:
 	sudo cp $(BIN)/kernel.elf $(LOEFI_MNT)/kernel.elf
 	
 	sudo umount $(LOEFI_MNT)
+	sudo umount $(LOEXT_MNT)
+	sudo rm -rf $(LOEFI_MNT) $(LOEXT_MNT)
 
-	sudo fdisk -l $(LODEV)
+	sudo gdisk -l $(LODEV)
 	sudo losetup -d $(LODEV)
 
 run:
