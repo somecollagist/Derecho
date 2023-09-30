@@ -1,11 +1,13 @@
 CFLG := -I$(GNUEFI)/inc -I$(GNUEFI)/lib -I$(ROOT) \
+		-g \
 		-lgnuefi -lefi \
 		-ffreestanding -fshort-wchar -fno-stack-protector \
+		-mno-red-zone \
 		$(CWARNS)
 CSRC := $(shell find $(SRC) -name "*.c")
 CTAR := $(patsubst $(SRC)/%,$(BIN)/%,$(patsubst %.c,%.o,$(CSRC)))
 
-AFLG := -f elf64
+AFLG := -g -f elf64
 ASRC := $(shell find $(SRC) -name "*.asm")
 ATAR := $(patsubst $(SRC)/%,$(BIN)/%,$(patsubst %.asm,%.o,$(ASRC)))
 

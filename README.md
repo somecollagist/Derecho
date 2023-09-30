@@ -26,6 +26,8 @@ Contributions are very welcome! I'm just a man, and my time isn't plentiful in n
 ### Development
 To start contributing, run `setup/setup-(os).sh` as described in [Running Derecho](#running-derecho). From there, write your changes and run `make` to compile the source code, or `make run` to run the compiled OS in QEMU.
 
+In order to debug, you can run `make debugrun` in the terminal which will start qemu, and give you a chance to attach a debugger like GDB to QEMU. In order to attach a debugger to QEMU (this uses GDB), you need to first run `gdb` in another terminal. Then you need to run `file path/to/kernel.elf` to get the debugging symbols. The kernel.elf is located in (project root)/bin/kernel.elf. After that, run `target remote localhost:1234` to attach GDB to QEMU since QEMU uses port 1234. Then set a breakpoint using `break functionname` or `break filename:line`. Then you need to run `continue` and then you can use `step` to step through code after the breakpoint is hit. Anyway, I'm not going to teach you how to use GDB here, you need to learn that yourself.
+
 Development is pretty open-ended so do whatever you want, but there's a few things to adhere to:
  - The development language is British English. If you don't know what that looks like, it's the code I write.
  - Indent using tabs (equivalent to four spaces).
