@@ -10,6 +10,14 @@ void strcpy(char* src, char* dst)
 	}
 }
 
+void memset(void* dst, int8_t value, size_t count)
+{
+	int8_t* d = dst;
+
+	for (size_t i = 0; i < count; i++)
+		*d++ = value;
+}
+
 void memcpy(const void* restrict src, void* restrict dst, size_t count)
 {
 	const uint8_t* s = src;

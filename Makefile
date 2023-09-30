@@ -64,4 +64,13 @@ run:
 		-usb $(IMG) \
 		-vga std \
 		-m 256M
-		
+
+debugrun:
+	qemu-system-x86_64 \
+		-L OVMF/ \
+		-pflash OVMF/OVMF.fd \
+		-net none \
+		-usb $(IMG) \
+		-vga std \
+		-m 256M \
+		-s -S
