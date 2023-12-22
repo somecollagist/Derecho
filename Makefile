@@ -15,10 +15,8 @@ export LD		:= ld
 export CWARNS	:= -Wall -Wno-implicit-function-declaration -Wno-comment
 
 LODEV			:= /dev/loop30
-LOEFI			:= $(LODEV)p1
-LOEFI_MNT		:= /mnt/$(OS)_efi
-LOEXT			:= $(LODEV)p2
-LOEXT_MNT		:= /mnt/$(OS)_ext
+LOPRT			:= $(LODEV)p1
+LOPRT_MNT		:= /mnt/$(OS)
 
 # .SILENT: prebuild build clean
 
@@ -37,21 +35,18 @@ build:
 	sudo gdisk $(IMG) < $(ROOT)/gdiskcmds
 	sudo losetup -P $(LODEV) $(IMG)
 	
-	sudo mformat -i $(LOEFI) -f 2880 ::
-	sudo mkfs.ext2 $(LOEXT)
+	sudo mkfs.fat -F 32 $(LOPRT)
 
-	sudo mount --mkdir $(LOEFI) $(LOEFI_MNT)
-	sudo mount --mkdir $(LOEXT) $(LOEXT_MNT)
+	sudo mount --mkdir $(LOPRT) $(LOPRT_MNT)
 
-	sudo mkdir $(LOEFI_MNT)/EFI
-	sudo mkdir $(LOEFI_MNT)/EFI/BOOT
-	sudo cp $(BOOTBIN)/BOOTX64.EFI $(LOEFI_MNT)/EFI/BOOT/BOOTX64.EFI
-	sudo cp startup.nsh $(LOEFI_MNT)/startup.nsh
-	sudo cp $(BIN)/kernel.elf $(LOEFI_MNT)/kernel.elf
+	sudo mkdir $(LOPRT_MNT)/EFI
+	sudo mkdir $(LOPRT_MNT)/EFI/BOOT
+	sudo cp $(BOOTBIN)/BOOTX64.EFI $(LOPRT_MNT)/EFI/BOOT/BOOTX64.EFI
+	sudo cp startup.nsh $(LOPRT_MNT)/startup.nsh
+	sudo cp $(BIN)/kernel.elf $(LOPRT_MNT)/kernel.elf
 	
-	sudo umount $(LOEFI_MNT)
-	sudo umount $(LOEXT_MNT)
-	sudo rm -rf $(LOEFI_MNT) $(LOEXT_MNT)
+	sudo umount $(LOPRT_MNT)
+	sudo rm -rf $(LOPRT_MNT)
 
 	sudo gdisk -l $(LODEV)
 	sudo losetup -d $(LODEV)
